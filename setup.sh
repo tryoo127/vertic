@@ -22,7 +22,7 @@ clear
 
 #Install Update
 echo -e "============================================="
-echo -e "          AUTOSCRIPT-FULL (V1.0) BY @XoolVPN "
+echo -e "     AUTOSCRIPT-FULL (V1.0) BY @XoolVPN "
 echo -e "============================================="
 apt -y update 
 apt install -y bzip2 gzip coreutils screen curl
@@ -74,24 +74,6 @@ else
 fi
 sleep 1
 
-#install v2ray
-echo -e "============================================="
-echo -e "             INSTALLING V2RAY "
-echo -e "============================================="
-sleep 2
-wget https://raw.githubusercontent.com/tryoo127/vertic/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
-sleep 2
-clear
-
-#install Xray
-echo -e "============================================="
-echo -e "              INSTALLING XRAY "
-echo -e "============================================="
-sleep 2
-wget https://raw.githubusercontent.com/tryoo127/vertic/main/install-xray.sh && chmod +x install-xray.sh && screen -S v2ray ./install-xray.sh
-sleep 2
-clear
-
 #install ssh ovpn
 echo -e "============================================="
 echo -e "           INSTALLING SSH & OVPN "
@@ -120,10 +102,27 @@ wget https://raw.githubusercontent.com/tryoo127/vertic/main/wg.sh && chmod +x wg
 sleep 2
 clear
 
+#install v2ray
+echo -e "============================================="
+echo -e "             INSTALLING V2RAY "
+echo -e "============================================="
+sleep 2
+wget https://raw.githubusercontent.com/tryoo127/vertic/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
+sleep 2
+clear
+
+#install Xray
+echo -e "============================================="
+echo -e "              INSTALLING XRAY "
+echo -e "============================================="
+sleep 2
+wget https://raw.githubusercontent.com/tryoo127/vertic/main/install-xray.sh && chmod +x install-xray.sh && screen -S v2ray ./install-xray.sh
+sleep 2
+clear
 
 #install ohp
 echo -e "============================================="
-echo -e "             INSTALLING OHP "
+echo -e "              INSTALLING OHP "
 echo -e "============================================="
 sleep 2
 wget https://raw.githubusercontent.com/tryoo127/vertic/main/ohp.sh && chmod +x ohp.sh && ./ohp.sh
