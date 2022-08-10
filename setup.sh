@@ -153,6 +153,7 @@ rm -f /root/ssr.sh
 rm -f /root/ins-vt.sh
 rm -f /root/install-xray.sh
 rm -f /root/ohp.sh
+rm -f /root/set-br.sh
 
 #install resolv
 apt install resolvconf
