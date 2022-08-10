@@ -137,6 +137,15 @@ wget https://raw.githubusercontent.com/tryoo127/vertic/main/ohp.sh && chmod +x o
 sleep 2
 clear
 
+#install backup
+echo -e "============================================="
+echo -e "             INSTALLING BACKUP "
+echo -e "============================================="
+sleep 2
+wget https://raw.githubusercontent.com/tryoo127/vertic/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+sleep 2
+clear
+
 rm -f /root/ssh-vpn.sh
 rm -f /root/wg.sh
 rm -f /root/ss.sh
