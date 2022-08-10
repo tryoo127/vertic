@@ -1,0 +1,160 @@
+#!/bin/bash
+MYIP=$(wget -qO- ipinfo.io/ip)
+IZIN=$( curl -sS https://raw.githubusercontent.com/tryoo127/access/main/ip | awk '{print $4}' | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
+echo -e "\e[0;32m            PERMISSION ACCEPTED!\e[0m"
+else
+rm -f setup.sh
+echo -e "\e[1;31m              PERMISSION DENIED!\e[0m"
+echo -e "\e[1;31m PLEASE CONTACT @XoolVPN TO REGISTER YOUR I.P\e[0m"
+sleep 5
+exit 0
+fi
+clear
+red='\e[1;31m'
+green='\e[0;32m'
+blue='\e[0;34m'
+cyan='\e[0;36m'
+cyanb='\e[46m'
+white='\e[0;37m'
+grey='\e[1;36m'
+NC='\e[0m'
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e ""
+echo -e "    [ 1 ] Restart All Services"
+echo -e "    [ 2 ] Restart OpenSSH"
+echo -e "    [ 3 ] Restart Dropbear"
+echo -e "    [ 4 ] Restart Stunnel4"
+echo -e "    [ 5 ] Restart OpenVPN"
+echo -e "    [ 6 ] Restart Squid"
+echo -e "    [ 7 ] Restart Nginx"
+echo -e "    [ 8 ] Restart Badvpn"
+echo -e "    [ 0 ] Exit To Menu"
+echo -e ""
+read -p "    Select From Options [1-8 or 0] :  " Restart
+echo -e ""
+echo -e "======================================"
+sleep 1
+clear
+case $Restart in
+                1)
+                clear
+                /etc/init.d/ssh restart
+                /etc/init.d/dropbear restart
+                /etc/init.d/stunnel4 restart
+                /etc/init.d/openvpn restart
+                /etc/init.d/fail2ban restart
+                /etc/init.d/cron restart
+                /etc/init.d/nginx restart
+                /etc/init.d/squid restart
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 1000
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 1000
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "          Service/s Restarted         "
+                echo -e ""
+                echo -e "======================================"
+                read -n 1 -s -r -p "Press any key to back on menu"
+                menu
+                ;;
+                2)
+                clear
+                /etc/init.d/ssh restart
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "         SSH Service Restarted        "
+                echo -e ""
+                echo -e "======================================"
+                read -n 1 -s -r -p "Press any key to back on menu"
+                menu
+                ;;
+                3)
+                clear
+                /etc/init.d/dropbear restart
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "       Dropbear Service Restarted     "
+                echo -e ""
+                echo -e "======================================"
+                read -n 1 -s -r -p "Press any key to back on menu"
+                menu
+                ;;
+                4)
+                clear
+                /etc/init.d/stunnel4 restart
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "        Stunnel4 Service Restarted    "
+                echo -e ""
+                echo -e "======================================"
+                read -n 1 -s -r -p "Press any key to back on menu"
+                menu
+                ;;
+                5)
+                clear
+                /etc/init.d/openvpn restart
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "       OpenVPN Service Restarted      "
+                echo -e ""
+                echo -e "======================================"
+                read -n 1 -s -r -p "Press any key to back on menu"
+                menu
+                ;;
+                6)
+                clear
+                /etc/init.d/squid restart
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "        Squid3 Service Restarted      "
+                echo -e ""
+                echo -e "======================================"
+                read -n 1 -s -r -p "Press any key to back on menu"
+                menu
+                ;;
+                7)
+                clear
+                /etc/init.d/nginx restart
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "         Nginx Service Restarted      "
+                echo -e ""
+                echo -e "======================================"
+                read -n 1 -s -r -p "Press any key to back on menu"
+                menu
+                ;;
+                8)
+                clear
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "    Badvpn  Badvpn Service Restarted  "
+                echo -e ""
+                echo -e "======================================"
+                read -n 1 -s -r -p "Press any key to back on menu"
+                menu
+                ;;
+                0)
+                clear
+                menu
+                ;;
+        esac
