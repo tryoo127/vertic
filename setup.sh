@@ -8,8 +8,8 @@ IZIN=$( curl -sS https://raw.githubusercontent.com/tryoo127/access/main/ip | awk
 if [ $MYIP = $IZIN ]; then
 clear
 echo -e "${green}            PERMISSION ACCEPTED!${NC}"
-echo -e "${green}                       PLEASE WAIT!${NC}"
-sleep 3
+echo -e "${green}                 PLEASE WAIT!${NC}"
+sleep 4
 else
 clear
 echo ""
@@ -22,7 +22,7 @@ fi
 clear
 #Welcome Note
 echo -e "============================================="
-echo -e "  ${green}AUTOSCRIPT-FULL (V1.0) BY @XoolVPN${NC}"
+echo -e "    ${green}AUTOSCRIPT-FULL (V1.0) BY @XoolVPN${NC}"
 echo -e "============================================="
 sleep 2
 apt -y update 
