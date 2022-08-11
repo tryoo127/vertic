@@ -21,7 +21,7 @@ fi
 clear
 #Welcome Note
 echo -e "============================================="
-echo -e "    ${green}AUTOSCRIPT-FULL (V1.0) BY @XoolVPN${NC}"
+echo -e "    ${cyan}AUTOSCRIPT-FULL (V1.0) BY @XoolVPN${NC}"
 echo -e "============================================="
 sleep 2
 apt -y update 
