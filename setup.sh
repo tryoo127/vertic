@@ -8,8 +8,7 @@ IZIN=$( curl -sS https://raw.githubusercontent.com/tryoo127/access/main/ip | awk
 if [ $MYIP = $IZIN ]; then
 clear
 echo -e "${green}            PERMISSION ACCEPTED!${NC}"
-echo -e "${green}                 PLEASE WAIT!${NC}"
-sleep 4
+sleep 3
 else
 clear
 echo ""
