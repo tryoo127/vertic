@@ -31,7 +31,7 @@ clear
 
 # Disable IPv6
 echo -e "============================================="
-echo -e "              DISABLE IPV6 "
+echo -e "              ${cyan}DISABLE IPV6${NC}"
 echo -e "============================================="
 sleep 2
 sysctl -w net.ipv6.conf.all.disable_ipv6=1
@@ -48,7 +48,7 @@ clear
 
 # Subdomain Settings
 echo -e "============================================="
-echo -e "           ADD DOMAIN / SUBDOMAIN "
+echo -e "           ${cyan}ADD DOMAIN / SUBDOMAIN${NC}"
 echo -e "============================================="
 sleep 2
 mkdir /etc/xray
@@ -62,7 +62,7 @@ ip=$(wget -qO- ipv4.icanhazip.com)
 host_ip=$(ping "${host}" -c 1 | sed '1{s/[^(]*(//;s/).*//;q}')
 if [[ ${host_ip} == "${ip}" ]]; then
 	echo -e ""
-	echo -e "${green}HOST/DOMAIN MATCHED..INSTALLATION WILL CONTINUE${NC}"
+	echo -e " ${green}HOST/DOMAIN MATCHED..INSTALLATION WILL CONTINUE${NC}"
 	echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
     echo "$host" >> /etc/v2ray/domain
     echo "$host" >> /etc/xray/domain
@@ -79,7 +79,7 @@ sleep 1
 
 #install ssh ovpn
 echo -e "============================================="
-echo -e "           INSTALLING SSH & OVPN "
+echo -e "           ${cyan}INSTALLING SSH & OVPN${NC}"
 echo -e "============================================="
 sleep 2
 wget https://raw.githubusercontent.com/tryoo127/vertic/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
@@ -88,7 +88,7 @@ clear
 
 #install ssr
 echo -e "============================================="
-echo -e "           INSTALLING SHADOWSOCKS "
+echo -e "           ${cyan}INSTALLING SHADOWSOCKS${NC}"
 echo -e "============================================="
 sleep 2
 wget https://raw.githubusercontent.com/tryoo127/vertic/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
@@ -98,7 +98,7 @@ clear
 
 #install wg
 echo -e "============================================="
-echo -e "            INSTALLING WIREGUARD "
+echo -e "            ${cyan}INSTALLING WIREGUARD${NC}"
 echo -e "============================================="
 sleep 2
 wget https://raw.githubusercontent.com/tryoo127/vertic/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
@@ -107,25 +107,17 @@ clear
 
 #install v2ray
 echo -e "============================================="
-echo -e "             INSTALLING V2RAY "
+echo -e "             ${cyan}INSTALLING V2RAY${NC}"
 echo -e "============================================="
 sleep 2
 wget https://raw.githubusercontent.com/tryoo127/vertic/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
-sleep 2
-clear
-
-#install Xray
-echo -e "============================================="
-echo -e "              INSTALLING XRAY "
-echo -e "============================================="
-sleep 2
 wget https://raw.githubusercontent.com/tryoo127/vertic/main/install-xray.sh && chmod +x install-xray.sh && screen -S v2ray ./install-xray.sh
 sleep 2
 clear
 
 #install ohp
 echo -e "============================================="
-echo -e "             INSTALLING OHP "
+echo -e "             ${cyan}INSTALLING OHP${NC}"
 echo -e "============================================="
 sleep 2
 wget https://raw.githubusercontent.com/tryoo127/vertic/main/ohp.sh && chmod +x ohp.sh && ./ohp.sh
@@ -134,7 +126,7 @@ clear
 
 #install backup
 echo -e "============================================="
-echo -e "             INSTALLING BACKUP "
+echo -e "             ${cyan}INSTALLING BACKUP${NC}"
 echo -e "============================================="
 sleep 2
 wget https://raw.githubusercontent.com/tryoo127/vertic/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
@@ -162,7 +154,7 @@ echo "1.1" > /home/ver
 echo "menu" >> .profile
 clear
 echo -e "============================================="
-echo -e "       INSTALLATION HAS BEEN COMPLETED "
+echo -e "       ${cyan}INSTALLATION HAS BEEN COMPLETED${NC}"
 echo -e "============================================="
 sleep 2
 clear
