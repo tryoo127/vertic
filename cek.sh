@@ -1,5 +1,17 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip)
+IZIN=$( curl -sS https://raw.githubusercontent.com/tryoo127/access/main/ip | awk '{print $4}' | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
+echo -e "\e[0;32m            PERMISSION ACCEPTED!\e[0m"
+else
+rm -f setup.sh
+echo -e "\e[1;31m              PERMISSION DENIED!\e[0m"
+echo -e "${green} PLEASE CONTACT @XoolVPN TO REGISTER YOUR I.P\e[0m"
+sleep 5
+exit 0
+fi
+clear
+echo " "
 
 if [ -e "/var/log/auth.log" ]; then
         LOG="/var/log/auth.log";
@@ -40,7 +52,7 @@ do
                 echo "$PID - $USER - $IP";
         fi
 done
-if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
+if [ -f "/etc/openvpn/server/openvpn-tcp-1194.log" ]; then
         echo " "
         echo "-----=[ OpenVPN TCP User Login ]=-----";
         echo "Username  |  IP Address  |  Connected Since";
@@ -50,7 +62,7 @@ if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
 fi
 echo "-------------------------------------"
 
-if [ -f "/etc/openvpn/server/openvpn-udp.log" ]; then
+if [ -f "/etc/openvpn/server/openvpn-udp-2200.log" ]; then
         echo " "
         echo "-----=[ OpenVPN UDP User Login ]=-----";
         echo "Username  |  IP Address  |  Connected Since";
