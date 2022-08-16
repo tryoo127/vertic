@@ -52,7 +52,7 @@ do
                 echo "$PID - $USER - $IP";
         fi
 done
-if [ -f "/etc/openvpn/server/openvpn-tcp-1194.log" ]; then
+if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
         echo " "
         echo "-----=[ OpenVPN TCP User Login ]=-----";
         echo "Username  |  IP Address  |  Connected Since";
@@ -62,7 +62,7 @@ if [ -f "/etc/openvpn/server/openvpn-tcp-1194.log" ]; then
 fi
 echo "-------------------------------------"
 
-if [ -f "/etc/openvpn/server/openvpn-udp-2200.log" ]; then
+if [ -f "/etc/openvpn/server/openvpn-udp.log" ]; then
         echo " "
         echo "-----=[ OpenVPN UDP User Login ]=-----";
         echo "Username  |  IP Address  |  Connected Since";
