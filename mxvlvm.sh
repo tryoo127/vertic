@@ -10,7 +10,7 @@ NC='\e[0m'
 MYIP=$(wget -qO- icanhazip.com);
 clear
 echo -e "  ${white}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e "  \E[46;1;37m                  ◎ XRAY VLESS ◎                             \E[0m"
+echo -e "  \E[46;1;37m                  ◎ XRAY VLESS ◎                            \E[0m"
 echo -e " " 
 echo -e  "    $white[ 1 ]•${grey}CREATE NEW USER"
 echo -e  "    $white[ 2 ]•${grey}RENEW ACCOUNT USER"
@@ -18,7 +18,7 @@ echo -e  "    $white[ 3 ]•${grey}DELETE ACTIVE USER"
 echo -e  "    $white[ 4 ]•${grey}CHECK USER LOGIN"
 echo -e  "  " 
 echo -e "  ${white}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e "  \E[46;1;37m                  ◎ XRAY VMESS ◎                       \E[0m"
+echo -e "  \E[46;1;37m                  ◎ XRAY VMESS ◎                            \E[0m"
 echo -e " " 
 echo -e  "    $white[ 5 ]•${grey}CREATE NEW USER"
 echo -e  "    $white[ 6 ]•${grey}RENEW ACCOUNT USER"
